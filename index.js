@@ -22,6 +22,8 @@ const swaggerUi = require('swagger-ui-express');
 
 const app = express();
 
+const path = require('path');
+
 const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json()); //body Parser is deprecated substituted by:
@@ -107,7 +109,7 @@ app.use(
 let auth = require("./auth")(app);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to myFlix!");
+  res.sendFile(path.resolve('./out/index.html'));
 });
 
 /**
