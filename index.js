@@ -112,6 +112,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve('./out/index.html'));
 });
 
+app.get("/addToFavorites", (req, res) => {
+  res.sendFile(path.resolve('./out/global.html'));
+});
+
 /**
  *@function get All Movies
  *@description get All movies from the database
